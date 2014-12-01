@@ -1,7 +1,5 @@
-VayCayHero
+Starter Tempalte
 ============
-
-Source files for building and modifying VayCayHero buildout code.
 
 If you are new to Gulp, Browserify, or build tools in general be sure to check out the [blog post](http://viget.com/extend/gulp-browserify-starter-faq) for more context and the [Wiki](https://github.com/greypants/gulp-starter/wiki) for some additional background knowledge.
 
@@ -36,6 +34,7 @@ Alternatively, you can run the version of gulp installed local to the project in
 ```
 ./node_modules/.bin/gulp
 ```
+
 ### Install npm dependencies
 
 ```
@@ -67,23 +66,6 @@ All paths and plugin settings have been abstracted into a centralized config obj
 #### Javascript
 
 Javascript source files (files stored in `src/javascript/`) are compiled via Browserify using the CommonJS pattern to manage dependancies. Picture each file as a component with a single purpose. 
-
-Components are initialized via markup by referencing the component in a data attribute like 
-
-```html
-<button data-component="componentName">Component</button>
-```
-
-All components are listed in `src/javascript/components/index.js`. 
-
-One example is a Read More button which displays hidden content. This button utilizes the Toggler component (`src/javascript/components/toggler.js`) which adds a `-active` class to the `data-target`. This component is initalized by referencing the Toggler component like so:
-
-```html
-<button data-component="toggler" data-target="#more">Read more</button>
-<div id="more">
-  <p>...</p>
-</div>
-```
 
 #### Stylesheets (SASS)
 
