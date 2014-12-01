@@ -1,0 +1,15 @@
+// Hide text
+.hide-text {
+  @include hide-text;
+}
+
+// Default Link stylings
+.default-link {
+  @include default-text-hover;
+  background: none;
+  border: none;
+  color: $green;
+  padding: 0;
+  position: relative;
+  text-align: left;
+}

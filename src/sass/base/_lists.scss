@@ -1,0 +1,88 @@
+// Mixins
+
+@mixin list {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    display: block;
+    font-size: $base-font-size;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin inline-list {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    display: inline-block;
+    font-size: $base-font-size;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Styles
+
+ol {
+  @include list;
+
+  &.-numbered {
+    counter-reset: ordered-counter;
+
+    > li:before {
+      content: counter(ordered-counter, decimal) '.';
+      counter-increment: ordered-counter;
+    }
+  }
+}
+
+ul {
+  @include list;
+
+  &.-inline {
+    @include inline-list;
+
+    &.-halves {
+      > li {
+          vertical-align: top;
+          width: 50%;
+      }
+    }
+
+    &.-thirds {
+      > li {
+        vertical-align: top;
+        width: 100%;
+
+        @include bp-tablet {
+          width: 33.33%;
+        }
+      }
+    }
+  }
+
+  &.-disc {
+    color: $pale-green;
+    list-style: disc;
+
+    > li {
+      display: list-item;
+      padding: 10px 0;
+
+      > span {
+        color: $grey;
+        display: block;
+        padding-right: 10px;
+        margin-left: -4px;
+        position: relative;
+      }
+    }
+  }
+}

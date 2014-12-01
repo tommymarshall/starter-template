@@ -1,0 +1,19 @@
+.page-footer {
+  @include row;
+  background: $grey;
+  color: #fff;
+  padding: 40px 0 0;
+}
+
+.page-footer__copyright {
+  @include row;
+  color: $light-grey;
+  font-size: 12px;
+  font-style: italic;
+  padding: 16px 0;
+  text-align: center;
+
+  p {
+    margin-bottom: 0;
+  }
+}

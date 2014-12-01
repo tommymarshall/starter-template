@@ -1,0 +1,139 @@
+[type="date"],
+[type="email"],
+[type="number"],
+[type="text"],
+.select-value,
+select,
+textarea {
+  @include font-open-sans;
+  @include smooth-fonts;
+  background: #fff;
+  border: none;
+  color: $grey;
+  font-size: 16px;
+  margin: 0;
+  padding: 8px 10px;
+  width: 100%;
+
+  // Misc Browser fixes
+  &::-ms-clear {
+    display: none;
+  }
+
+  &::-webkit-calendar-picker-indicator{
+    display: none;
+  }
+
+  &::-webkit-input-placeholder{
+    visibility: hidden !important;
+  }
+}
+
+.form__row {
+  display: block;
+  position: relative;
+  vertical-align: top;
+
+  .-inline & {
+    display: inline-block;
+    width: auto;
+  }
+
+  &.-half {
+    display: inline-block;
+    padding-right: 8px;
+    width: 50%;
+
+    &.-last {
+      padding-left: 8px;
+      padding-right: 0;
+    }
+  }
+}
+
+.form__label {
+  @include label;
+  color: $grey;
+  cursor: text;
+  display: block;
+  font-size: 12px;
+  margin: 0;
+  padding: 18px 0 6px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  &.-hidden {
+    display: none;
+  }
+
+  .-inline-label & {
+    bottom: 8px;
+    color: $light-grey;
+    font-weight: 400;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 94px;
+    z-index: 9;
+  }
+}
+
+.form__footer {
+  margin-top: 20px;
+}
+
+// Styles Checkboxes
+.checkbox-label {
+  cursor: pointer;
+  display: block;
+  padding: 8px 0 8px 34px;
+  position: relative;
+  overflow: hidden;
+}
+
+[type="checkbox"] {
+  float: left;
+  height: 22px;
+  left: 0;
+  position: relative;
+  visibility: hidden;
+  width: 0;
+
+  & + label:before {
+    @include pseudo;
+    border-radius: 3px;
+    border: 1px solid $light-grey;
+    height: 20px;
+    top: 6px;
+    visibility: visible;
+    width: 20px;
+  }
+
+  & + label:after {
+    @include pseudo;
+    @include default-transition;
+    color: $dark-pale-green;
+    content: "✔";
+    left: 6px;
+    top: 8px;
+    transform: translateX(-20px);
+    visibility: visible;
+  }
+
+  &:checked + label:before {
+    border: 1px solid $dark-pale-green;
+  }
+
+  &:checked + label:after {
+    transform: translateX(0);
+  }
+
+  &:active + label:before {
+    border: 1px solid $green;
+  }
+
+  &:active + label:after {
+    color: $green;
+  }
+}

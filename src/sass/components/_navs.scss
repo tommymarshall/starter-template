@@ -1,0 +1,29 @@
+.nav {
+  @include list;
+
+  // Main
+  &.-main {
+    width: 100%;
+    display: inline-block;
+    margin: 0 0 12px;
+    text-align: right;
+    vertical-align: top;
+
+    > ul {
+      @include inline-list;
+      margin-top: 20px;
+
+      > li {
+        position: relative;
+        vertical-align: top;
+
+        > a {
+          @include default-text-hover;
+          display: block;
+          font-size: 18px;
+          padding: 12px 10px;
+        }
+      }
+    }
+  }
+}
