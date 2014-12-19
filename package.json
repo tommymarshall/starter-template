@@ -1,7 +1,7 @@
 {
-  "name": "template-starter",
+  "name": "react-tempalte-starter",
   "version": "1.0.0",
-  "description": "Starter tempalte.",
+  "description": "A base for building a react app.",
   "repository": {
     "type": "git",
     "url": "git://github.com/tommymarshall/starter-template.git"
@@ -28,6 +28,11 @@
     "watchify": "^2.0.0"
   },
   "dependencies": {
-    "jquery": "^2.1.1"
+    "flux": "^2.0.1",
+    "immutable": "^3.4.1",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2",
+    "react-tools": "^0.12.2",
+    "reactify": "^0.17.1"
   }
 }

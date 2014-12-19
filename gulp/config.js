@@ -21,17 +21,9 @@ module.exports = {
   },
   images: {
     src: [
-      src + '/images/**/*',
-      '!' + src + '/images/icons/**'
+      src + '/images/**/*'
     ],
     dest: dest + '/assets/images'
-  },
-  sprite: {
-    src: src + '/images/icons/*.svg',
-    dest: src + '/sprite',
-    svg_options: {
-      mode: 'symbols'
-    }
   },
   markup: {
     src: src + '/htdocs/*.html',
@@ -49,7 +41,7 @@ module.exports = {
     debug: true,
     extensions: ['.jsx'],
     bundleConfigs: [{
-      entries: src + '/javascript/app.js',
+      entries: src + '/javascript/app.jsx',
       dest: dest + '/assets/js/',
       outputName: 'app.js'
     }]
